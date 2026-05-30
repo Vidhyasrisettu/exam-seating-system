@@ -1,32 +1,26 @@
-# 🎓 Smart Exam Seating Plan Lookup System
+# 🎓 Exam Seating Plan Lookup System
 
 ## 📌 Description
-This project allows students to check their exam hall, seat number, and subject details using their register number.
+This is a simple web application that allows students to check their exam seating details using their register number.
 
 ## 🚀 Features
-- 🔍 Search by Register Number
-- 📊 Excel Data Integration
-- 📱 Mobile Friendly UI
-- ⚡ Fast Result Display
+- 🔍 Search using Register Number
+- 📄 Displays student details from Excel
+- ⚡ Fast result using Flask
 
 ## 🛠️ Technologies Used
 - Python (Flask)
-- HTML & CSS
 - Pandas
+- HTML, CSS
 - Excel
 
 ## 📷 Output
-Students can enter their register number and view:
+After entering the register number, the system shows:
 - Name
+- Register Number
 - Room Number
 - Seat Number
 - Department
 - Subject Code
 
-## 💡 Future Improvements
-- PDF Download
-- Admin Upload Panel
-- Full Seating Chart View
-
-## 👩‍💻 Author
-Vidhyasri S
+## 📁 Project Structure
