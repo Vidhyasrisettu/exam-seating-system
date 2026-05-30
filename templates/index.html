@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Seating Plan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            width: 250px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff7eb3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #ff4e8a;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .no-data {
+            color: yellow;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 Exam Seating Plan</h1>
+
+    <form method="POST">
+        <input type="text" name="reg_no" placeholder="Enter Register Number" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if data is not none %}
+        {% for i, row in data.iterrows() %}
+            <div class="card">
+                <h3>Student Details</h3>
+                <p><b>Name:</b> {{ row['name'] }}</p>
+                <p><b>Roll No:</b> {{ row['roll no'] }}</p>
+                <p><b>Register No:</b> {{ row['reg no'] }}</p>
+                <p><b>Department:</b> {{ row['dept'] }}</p>
+                <p><b>Sub Code:</b> {{ row['sub code'] }}</p>
+                <p><b>Room:</b> {{ row['room no'] }}</p>
+                <p><b>Seat:</b> {{ row['seat no'] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-data">No data found 😔</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
